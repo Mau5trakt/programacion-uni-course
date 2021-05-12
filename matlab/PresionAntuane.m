@@ -1,6 +1,6 @@
 % Programa para calcular el punto de ebullicion del agua 
 % a distintas temperaturas o Presiones
-% Hecho por Enrique Mauricio Alemany Torres
+% Hecho por Enrique Mauricio Alemany Torres Y NoisyB
 
 T = input('Ingrese la temperatura en °C /n');
 if 0 < T && T < 100
@@ -17,3 +17,10 @@ end
 
 P = 10^(A-B/(T+C));
 fprintf('La presión de ebullucion para T = %6.2f °C es de %6.3f bar',T,P)
+%% Grafica 
+T1 = linspace(0,100,21); %%range of the plot
+A = 8.07131; 
+B = 1730.63;
+C = 233.426;
+P1 = 10.^(A-B./(T1 + C)); %idk 
+plot(T1,P1,'bo-')
