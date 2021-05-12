@@ -16,6 +16,7 @@ else
 end
 
 P = 10^(A-B/(T+C));
+P = P/750.062;
 fprintf('La presión de ebullucion para T = %6.2f °C es de %6.3f bar',T,P)
 %% Grafica 
 T1 = linspace(0,100,21); %%range of the plot
@@ -23,6 +24,7 @@ A = 8.07131;
 B = 1730.63;
 C = 233.426;
 P1 = 10.^(A-B./(T1 + C)); %idk 
+P1 = P1/750.062;
 plot(T1,P1,'bo-')
 
 T2 = linspace(100,374,21); %%range of the plot
@@ -30,7 +32,14 @@ A = 8.14019;
 B = 1810.94;
 C = 244.485;
 P2 = 10.^(A-B./(T2 + C)); %idk 
-P2 = P2/750.06
+P2 = P2/750.062;
 
+semilogy(T,P,'kx','MarkerSize',4,'LineWidth',3)
+hold on
 %plot(T1,P1,'bo-', T2,P2, 'rs-')
 semilogy(T1,P1,'bo-', T2,P2, 'rs-') %graficar en escala semilogaritmica en y 
+hold on
+plot([min(T1), T], [P,P])
+hold on 
+plot([T, T], [1E-3, P])
+s = ['T = ',n]

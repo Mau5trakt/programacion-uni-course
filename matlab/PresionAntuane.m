@@ -38,3 +38,13 @@ semilogy(T,P,'kx','MarkerSize',4,'LineWidth',3)
 hold on
 %plot(T1,P1,'bo-', T2,P2, 'rs-')
 semilogy(T1,P1,'bo-', T2,P2, 'rs-') %graficar en escala semilogaritmica en y 
+hold on
+plot([min(T1), T], [P,P],'r--')
+hold on 
+plot([T, T], [1E-3, P], 'r--')
+s = ['T = ',num2str(T), '°C P = ',num2str(P),'bar'];
+text(T+10,P,s)
+title('Grafica P vs V para el agua')
+xlabel('Temperatura en °C')
+ylabel('Presion, bar')
+grid on 
