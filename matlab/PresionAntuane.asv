@@ -1,10 +1,11 @@
 % Programa para calcular el punto de ebullicion del agua 
 % a distintas temperaturas o Presiones
-% Hecho por Elena Aguilar
-opcion= input ('Desea calcular la presion (P) o la temperatura (T)')
+% Hecho por Elena y Enrique :D
+clc
+opcion= input ('Desea calcular la presion (P) o la temperatura (T) \n');
 switch opcion 
     case 'P'
-    T = input('Ingrese la temperatura en °C /n');
+    T = input('Ingrese la temperatura en °C \n');
     if 0 < T && T < 100
         A = 8.07131;
         B = 1730.63;
@@ -35,11 +36,13 @@ switch opcion
      else 
          error('Presion Fuera de Rango, ingrese un valor entre 0.006521 y 217.3 bar \n')
      end 
+end
      %Calculo de temperatura de Ebullicion del Agua
      T= (B/(A-log10(P)))-C;
      % Resultados 
      P= P*(1.01325/760); %Conversion de mmHg a bar
-     fp
+     fprintf ('La temperatura de ebullicion del agua al %6.4rf bar es de %5.2f oc', P, T)
+     
             
             
         

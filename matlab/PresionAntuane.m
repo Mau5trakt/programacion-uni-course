@@ -1,6 +1,7 @@
 % Programa para calcular el punto de ebullicion del agua 
 % a distintas temperaturas o Presiones
-%  por Elena Aguilar
+% Hecho por Elena y Enrique :D
+clc
 opcion= input ('Desea calcular la presion (P) o la temperatura (T) \n');
 switch opcion 
     case 'P'
@@ -47,6 +48,7 @@ end
         
     
     %% Grafica 
+    clf %limpiar las graficas
     T1 = linspace(0,100,21); %%range of the plot
     A = 8.07131; 
     B = 1730.63;
