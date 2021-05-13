@@ -1,6 +1,6 @@
 % Programa para calcular el punto de ebullicion del agua 
 % a distintas temperaturas o Presiones
-% Hecho por Elena y Enrique :D
+% Hecho por Elena, Marcio y Enrique :D
 clc
 opcion= input ('Desea calcular la presion (P) o la temperatura (T) \n');
 switch opcion 
