@@ -14,3 +14,13 @@ wp=[0	999.9	1.792;
     90  965.2   0.341;
     100	958.4	0.284];
 
+T = wp(:,1);
+d = wp(:, 2);
+u = wp(:,3);
+
+yyaxis left 
+plot(T,d)
+
+yyaxis right
+plot(T,u)
+
