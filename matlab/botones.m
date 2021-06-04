@@ -79,13 +79,8 @@ function checkbox1_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-valor= get(hObject, 'value');
+% Hint: get(hObject,'Value') returns toggle state of checkbox1
 
-if valor ==1
-    set (handles.text2,'string', 'EL TEXTO HA CAMBIADO')
-else 
-    set(handles.text2,'string', 'EL TEXTO DE PRUEBA')
-end 
 
 % --- Executes on button press in pushbutton1.
 function pushbutton1_Callback(hObject, eventdata, handles)
