@@ -1,4 +1,4 @@
-vida = 10 
+vida = 100
 
 while vida > 0
     atk = input('Ingrese un numero entre 1 y 10: ')
