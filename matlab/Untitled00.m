@@ -12,10 +12,10 @@ function K = findk(T,P,aT1,aT2,aT6,aP1,aP2,aP3)
     K = exp(aT1/T^2+aT2/T+aT6+aP1*log(P)+aP2/P^2+aP3/P);
 end
 function y = FuncionY(P)
-    molar_pro = 0.25;
-    molar_hex = 0.35;
+    molar_pro = 0.2;
+    molar_hex = 0.4;
     molar_oct = 0.4;
-    T = celsius_rankine(70);
+    T = celsius_rankine(75);
     P = atm_psi(P); %Suponer una presión en atm
     K_pro = findk(T,P,-970688.5625,0,7.15059,-0.76984,0,6.90224); %propano
     K_hex = findk(T,P,-1778901,0,6.96783,-0.84634,0,0); %hexano

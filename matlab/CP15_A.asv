@@ -13,16 +13,52 @@ fprintf('en equilibrio  con una solución líquida 20/100 molar de propano, \n 4
 %se pone el porcentaje de la forma n/100 ya que el símbolo de porcentaje lo
 %reconoce como comentario en una string.
 %datos del ejercicio 
+y_propano = 0.2;
+y_hexano = 0.4;
+y_octano = 0.4;
 t = 626.67; %rankine
-p = 7.34797; 
+p = 0.5:1:7; %se supone este rango de temperaturas 
 % Constantes propano
-at1_propano = 970688.5625;%menos
+at1_propano = -970688.5625;%menos
 at2_propano = 0;
 at6_propano = 7.15059;
-ap1_propano = 0.76984;%menos
+ap1_propano = -0.76984;%menos
 ap2_propano = 0;
 ap3_propano = 6.900;
-z = (log(p)+(ap2_propano/p^2)+(ap3_propano/p));
-k = exp((at1_propano/t^2)+(at2_propano/t)+(at6_propano)*z);
-disp(k)
-fprintf('el k para el propano es: %6f',k)
+% z = (log.(p)+(ap2_propano/p^2)+(ap3_propano/p));
+% kpropano = exp((at1_propano/t^2)+(at2_propano/t)+(at6_propano)*(z));
+% disp(kpropano);
+% fprintf('el k para el propano es: %f\n',kpropano)
+
+% constantes hexano
+at1_hexano = -1778.901;
+at2_hexano = 0;
+at6_hexano = 6.96783;
+ap1_hexano = -0.84634;
+ap2_hexano = 0;
+ap3_hexano = 0;
+% x = (log(p)+(ap2_hexano/p^2)+(ap3_hexano/p));
+% khexano = exp((at1_hexano/t^2)+(at2_hexano/t)+(at6_hexano)*x);
+% fprintf('el k para el hexano es: %f\n',khexano)
+
+%contantes octano
+at1_octano = 0;
+at2_octano = -7646.81641;
+at6_octano = 12.48457;
+ap1_octano = -0.73152;
+ap2_octano = 0;
+ap3_octano = 0;
+% y = (log(p)+(ap2_octano/p^2)+(ap3_octano/p));
+% koctano = exp((at1_octano/t^2)+(at2_octano/t)+(at6_octano)*y);
+% fprintf('el k para el octano es: %f\n',koctano)
+
+suma = zeros(l,length(p));
+
+for i = 1:length(p)
+k_propano = exp( at1_propano/(t(i)^2) + at2_propano/(t(i)) + at6_propano + ap1_propano*log(p) + ap2_propano/(p^2) + ap3_propano/p);
+k_hexano = exp( at1_hexano/(t(i)^2) + at2_hexano/(t(i)) + at6_hexano + ap1_hexano*log(p) + ap2_hexano/(p^2) + ap3_hexano/p);
+k_octano = exp( at1_octano/(t(i)^2) + at2_octano/(t(i)) + at6_octano + ap1_octano*log(p) + ap2_octano/(p^2) + ap3_octano/p);
+
+suma(i) = y_propano/k_propano + y_hexano/k_hexano + y_octano/k_; 
+end
+
