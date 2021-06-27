@@ -183,7 +183,7 @@ set(handles.edit11,'String',rugosidad); %Se muestra en el cuadro de edit tex asi
 
 
 % --- Executes during object creation, after setting all properties.
-function popupmenu2_CreateFcn(hObject, eventdata, handles)
+function popupmenu2_CreateFcn(hObject, ~, ~)
 % hObject    handle to popupmenu2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
@@ -213,7 +213,29 @@ set(handles.edit9,'String',rey)
 
 %if rey > 2000:
     
-    
+ %Determinar el tipo de regimen 
+Re = (Velocidad*Diametro*densidad)/(1000*viscosidad);
+
+if 0 < Re && Re < 2000
+
+   a = 'Regimen laminar';
+
+elseif  2000 <= Re && Re <= 4000
+ 
+    a = 'Regimen Transitorio ';
+   
+elseif 4000 < Re
+        
+        a = 'Regimen turbulento';
+            
+else 
+      a = 'Error: Reynolds no puede ser negativo';
+   
+  
+end   
+
+  set(handles.edit12,'string',(a)) 
+  
 
 % hObject    handle to pushbutton1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -301,7 +323,7 @@ function edit7_Callback(hObject, eventdata, handles)
 
 
 % --- Executes during object creation, after setting all properties.
-function edit7_CreateFcn(hObject, eventdata, handles)
+function edit7_CreateFcn(hObject, eventdata, ~)
 % hObject    handle to edit7 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
@@ -413,7 +435,7 @@ function edit12_Callback(hObject, eventdata, handles)
 
 % Hints: get(hObject,'String') returns contents of edit12 as text
 %        str2double(get(hObject,'String')) returns contents of edit12 as a double
-
+ 
 
 % --- Executes during object creation, after setting all properties.
 function edit12_CreateFcn(hObject, eventdata, handles)
