@@ -206,68 +206,22 @@ densidad = 1.6e-05*T.^3 + -0.005963*T.^2 + 0.02056*T + 1000;
 viscosidad = (-2.717e-09*T.^3 + 6.052e-07*T.^2 + -4.822e-05*T + 0.00176)*1000;
 
 %Calcular Reynolds 
-Re = (Velocidad*Diametro*densidad)/(1000*viscosidad);
-set(handles.edit9,'String',Re)
+rey = (Velocidad*Diametro*densidad)/(1000*viscosidad);
+set(handles.edit9,'String',rey)
 
+%e = rugosidad/Diametro;
 
-material = get(hObject, 'Value'); %se guarda la posicion del popup mennu en la variable material
-if material == 1 % cada posicion equivale a cada material en el popupmenu, por lo que se le asigna su rugosidad
-    k = 0;
-elseif material == 2
-    k = 1.2e-03;
-elseif material == 3
-    k = 2e-03;
-elseif material == 4
-    k = 1.5e-05;
-elseif material == 5
-    k = 2e-02;
-elseif material == 6
-    k = 0.4;
-elseif material == 7
-    k = 0.05;
-elseif material == 8
-    k = 0.3;
-elseif material == 9 
-    k = 1.5;  
-end
-
-
-
-
-
-e = k/Diametro;
-
-f = colebrook(Re,e);
-
-%mostrando f 
-
-set(handles.edit10,'String',f);
-
-
-% %hacer la grafica 
-axes(handles.axes4);
-% plot(moody);
-
-
-
-%mostrando el tipo de regimen 
-if 0 < Re && Re < 2000
-    regimen = 'Regimen Laminar';
-elseif 2001 < Re && Re < 4000
-    regimen = 'Regimen De Transición';
-elseif Re > 4000
-    regimen = 'Regimen Turbulento';
-else 
-    regimen = 'Error, el valor de Reynolds es negativo';
-end
-
-
-set(handles.edit12,'String',regimen);
-
-
-
-
+%if rey > 2000:
     
+    
+
+
+
+
+
+
+
+
 
 % hObject    handle to pushbutton1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
