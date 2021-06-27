@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-function [F] = colebrook
-=======
 function F = colebrook(R,K)
 % F = COLEBROOK(R,K) fast, accurate and robust computation of the 
 %     Darcy-Weisbach friction factor F according to the Colebrook equation:
@@ -21,7 +18,6 @@ function F = colebrook(R,K)
 %   R, K and F are either scalars or compatible arrays.
 %
 % ACCURACY:
->>>>>>> kubz
 %   Around machine precision forall R > 3 and forall 0 <= K, 
 %   i.e. forall values of physical interest. 
 %
@@ -36,17 +32,6 @@ function F = colebrook(R,K)
 % Author: D. Clamond, 2008-09-16. 
 
 % Check for errors.
-<<<<<<< HEAD
-if any(R(:)<2300) == 1 
-   warning('The Colebrook equation is valid for Reynolds'' numbers >= 2300.');      
-end
-if nargin == 1 || isempty(K) == 1      
-   K = 0;
-end
-if any(K(:)<0) == 1
-   warning('The relative sand roughness must be non-negative.'); 
-end
-=======
 if any(R(:)<2300) == 1, 
    warning('The Colebrook equation is valid for Reynolds'' numbers >= 2300.');      
 end,
@@ -56,7 +41,6 @@ end,
 if any(K(:)<0) == 1, 
    warning('The relative sand roughness must be non-negative.'); 
 end,
->>>>>>> kubz
 
 % Initialization.
 X1 = K .* R * 0.123968186335417556;              % X1 <- K * R * log(10) / 18.574.
@@ -75,8 +59,4 @@ F = F - (1+X1+F+0.5*E) .* E .*(X1+F) ./ (1+X1+F+E.*(1+E/3));
 
 % Finalized solution.
 F = 1.151292546497022842 ./ F;                   % F <- 0.5 * log(10) / F;
-<<<<<<< HEAD
 F = F .* F;                                      % F <- Friction factor.
-=======
-F = F .* F;                                      % F <- Friction factor.
->>>>>>> kubz
