@@ -165,8 +165,6 @@ elseif material == 8
 elseif material == 9 
     rugosidad = 1.5;  
 end
-set(handles.edit11,'String',rugosidad); %Se muestra en el cuadro de edit tex asignado el valor de la rugosidad 
-
 
 
 
@@ -197,6 +195,9 @@ end
 
 % --- Executes on button press in pushbutton1. Boton de calcular 
 function pushbutton1_Callback(hObject, eventdata, handles)
+axes(handles.axes1)
+cla(handles.axes1,'reset');
+
 T = str2num(get(handles.edit7,'String')); %Definimos La temperatura
 Diametro = str2num(get(handles.edit1,'String')); %Definimos el diametro
 Velocidad = str2num(get(handles.edit8,'String')); %definimos la velocidad 
@@ -246,7 +247,9 @@ set(handles.edit10,'String',f);
 
 % %hacer la grafica 
 axes(handles.axes4);
-% plot(moody);
+moody
+hold on 
+plot(Re,f,'ko','MarkerSize',4,'Linewidth',2)
 
 
 
