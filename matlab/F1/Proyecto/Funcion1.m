@@ -61,6 +61,21 @@ guidata(hObject, handles);
 % UIWAIT makes Funcion1 wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
+axes(handles.axes5)
+cla(handles.axes5,'reset');
+imshow('fondo.JPG')
+
+axes(handles.axes1)
+cla(handles.axes1,'reset');
+imshow('fac.JPG')
+
+axes(handles.axes2)
+cla(handles.axes2,'reset');
+imshow('logofiq.png')
+
+axes(handles.axes3)
+cla(handles.axes3,'reset');
+imshow('ima2.JPG')
 
 % --- Outputs from this function are returned to the command line.
 function varargout = Funcion1_OutputFcn(hObject, eventdata, handles) 
