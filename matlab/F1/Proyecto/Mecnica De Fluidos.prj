@@ -1,0 +1,77 @@
+<deployment-project plugin="plugin.apptool" plugin-version="1.0">
+  <configuration build-checksum="3313911747" file="C:\Users\Satellite C655\Documents\GitHub\programacion-uni-course\matlab\F1\Proyecto\Mecnica De Fluidos.prj" location="C:\Users\Satellite C655\Documents\GitHub\programacion-uni-course\matlab\F1\Proyecto" name="Mecnica De Fluidos" target="target.mlapps" target-name="Package App">
+    <param.appname>Mecnica De Fluidos</param.appname>
+    <param.authnamewatermark />
+    <param.email />
+    <param.company />
+    <param.icon>${PROJECT_ROOT}\Mecnica De Fluidos_resources\icon_24.png</param.icon>
+    <param.icons>
+      <file>${PROJECT_ROOT}\Mecnica De Fluidos_resources\icon_48.png</file>
+      <file>${PROJECT_ROOT}\Mecnica De Fluidos_resources\icon_24.png</file>
+      <file>${PROJECT_ROOT}\Mecnica De Fluidos_resources\icon_16.png</file>
+    </param.icons>
+    <param.summary />
+    <param.description>Calcula el numero de Darcy y el Reynolds en dependencia del tipo de material de la tubería, la temperatura y la velocidad del fluido</param.description>
+    <param.screenshot>${PROJECT_ROOT}\WhatsApp Image 2021-06-30 at 20.57.53.jpeg</param.screenshot>
+    <param.version>1.0</param.version>
+    <param.products.name>
+      <item>MATLAB</item>
+    </param.products.name>
+    <param.products.id>
+      <item>1</item>
+    </param.products.id>
+    <param.products.version>
+      <item>9.10</item>
+    </param.products.version>
+    <param.platforms />
+    <param.output>${PROJECT_ROOT}</param.output>
+    <param.guid>2603980e-3c01-419b-98a5-7b0186854542</param.guid>
+    <unset>
+      <param.authnamewatermark />
+      <param.email />
+      <param.company />
+      <param.summary />
+      <param.version />
+      <param.platforms />
+      <param.output />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}\Funcion1.m</file>
+    </fileset.main>
+    <fileset.depfun />
+    <fileset.resources>
+      <file>${PROJECT_ROOT}\colebrook.m</file>
+      <file>${PROJECT_ROOT}\fondo.JPG</file>
+      <file>${PROJECT_ROOT}\Funcion1.fig</file>
+      <file>${PROJECT_ROOT}\Funcion1.m</file>
+      <file>${PROJECT_ROOT}\gg.jpeg</file>
+      <file>${PROJECT_ROOT}\ima2.JPG</file>
+      <file>${PROJECT_ROOT}\logofiq.png</file>
+      <file>${PROJECT_ROOT}\moody.m</file>
+    </fileset.resources>
+    <fileset.package />
+    <build-deliverables>
+      <file location="C:\Users\Satellite C655\Documents\GitHub\programacion-uni-course\matlab\F1" name="Proyecto" optional="false">C:\Users\Satellite C655\Documents\GitHub\programacion-uni-course\matlab\F1\Proyecto</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2021a</root>
+      <toolboxes />
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>10.0</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>
