@@ -67,7 +67,7 @@ imshow('fondo.JPG')
 
 axes(handles.axes1)
 cla(handles.axes1,'reset');
-imshow('fac.JPG')
+imshow('gg.jpeg')
 
 axes(handles.axes2)
 cla(handles.axes2,'reset');
@@ -210,8 +210,8 @@ end
 
 % --- Executes on button press in pushbutton1. Boton de calcular 
 function pushbutton1_Callback(hObject, eventdata, handles)
-axes(handles.axes1)
-cla(handles.axes1,'reset');
+axes(handles.axes4)
+cla(handles.axes4,'reset');
 
 T = str2num(get(handles.edit7,'String')); %Definimos La temperatura
 Diametro = str2num(get(handles.edit1,'String')); %Definimos el diametro
@@ -247,17 +247,22 @@ elseif material == 9
     k = 1.5;  
 end
 
-
-
-
-
 e = k/Diametro;
 
-f = colebrook(Re,e);
 
-%mostrando f 
-
-set(handles.edit10,'String',f);
+%mostrando el tipo de regimen 
+if 0 < Re && Re < 2000
+    regimen = 'Regimen Laminar';
+    f = 64/Re;
+elseif 2001 < Re && Re < 4000
+    f = 64/Re;
+    regimen = 'Regimen De Transición';
+elseif Re > 4000
+    regimen = 'Regimen Turbulento';
+    f = colebrook(Re, e);
+else 
+    regimen = 'Error, el valor de Reynolds es negativo';
+end
 
 
 % %hacer la grafica 
@@ -266,19 +271,7 @@ moody
 hold on 
 plot(Re,f,'ko','MarkerSize',4,'Linewidth',2)
 
-
-
-%mostrando el tipo de regimen 
-if 0 < Re && Re < 2000
-    regimen = 'Regimen Laminar';
-elseif 2001 < Re && Re < 4000
-    regimen = 'Regimen De Transición';
-elseif Re > 4000
-    regimen = 'Regimen Turbulento';
-else 
-    regimen = 'Error, el valor de Reynolds es negativo';
-end
-
+set(handles.edit10,'String',f);
 
 set(handles.edit12,'String',regimen);
 
